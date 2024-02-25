@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bun x --bun vite",
     "oldbuild": "vue-tsc && vite build",
-    "build": "bun x --bun vite build",
+    "build": "bun x vite build",
     "preview": "vite preview"
   },
   "dependencies": {
