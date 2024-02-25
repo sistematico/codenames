@@ -1,11 +1,12 @@
 {
-  "name": "codenames",
+  "name": "cardnames",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "dev": "bun x --bun vite",
+    "oldbuild": "vue-tsc && vite build",
+    "build": "bun x --bun vite build",
     "preview": "vite preview"
   },
   "dependencies": {
