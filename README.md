@@ -1,5 +1,11 @@
 # CardNames
 
+<p align="center">
+  <img src="./public/bg.jpg" alt="CardNames" />
+</p>
+
+[![Bun Vite Deploy](https://github.com/sistematico/cardnames/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/cardnames/actions/workflows/deploy.yml)
+
 Jogo de tabluleiro ao estilo "CodeNames".
 
 ## Nginx
