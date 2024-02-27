@@ -5,21 +5,28 @@
   "type": "module",
   "scripts": {
     "dev": "bunx --bun vite",
-    "oldbuild": "vue-tsc && vite build",
-    "build": "bun x vite build",
-    "preview": "vite preview"
+    "build": "bunx --bun vite build",
+    "preview": "vite preview",
+    "generate": "bunx drizzle-kit generate:sqlite --schema ./server/schema.ts",
+    "migrate": "bun run ./server/migrate.ts",
+    "studio": "bunx drizzle-kit studio"
   },
   "dependencies": {
+    "@libsql/client": "^0.5.2",
     "@popperjs/core": "^2.11.8",
     "@vonojs/vono": "^0.0.18",
     "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.29.4",
     "hono": "^4.0.7",
     "vue": "^3.4.19",
     "vue-router": "4"
   },
   "devDependencies": {
+    "@types/bun": "^1.0.7",
     "@types/node": "^20.11.20",
     "@vitejs/plugin-vue": "^5.0.4",
+    "drizzle-kit": "^0.20.14",
     "sass": "^1.71.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",

@@ -38,6 +38,8 @@ jobs:
           git pull origin main
           [ -f .env ] || cp .env.prod .env
           bun install
+          bun run generate
+          bun run migrate
           bun run build
 
           

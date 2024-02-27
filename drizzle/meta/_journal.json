@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1709021055379,
+      "tag": "0000_cooing_shooting_star",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1709022668395,
+      "tag": "0001_mature_purifiers",
+      "breakpoints": true
+    }
+  ]
+}
