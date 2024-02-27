@@ -21,7 +21,7 @@ if (!route.params.id) router.push('/')
 
 const gameSessionId = route.params.id, hint = ref(''), hintLen = ref(0), shint = ref(''), flipped = ref(false), url = `${import.meta.env.VITE_APP_URL}/json/words.json` // Substitua pela URL do seu JSON
 const selectedWords = ref<Word[]>([])
-let bgColor = 'red'
+// let bgColor = 'red'
 
 async function getWords(): Promise<Word[]> {
   let i = 0
