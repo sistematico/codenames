@@ -11,5 +11,8 @@ export const store = reactive({
   logout: function() {
     const session = localStorage.getItem('user')
     if (session) localStorage.removeItem('user')
-  } 
+  },
+  changeTeam: function(team: string) {
+    this.team = team
+  }
 })

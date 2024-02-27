@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vono from '@vonojs/vono'
+import { bun } from "@vonojs/vono/adapters"
 import { resolve } from 'node:path'
 
 // https://vitejs.dev/config/
@@ -12,5 +13,5 @@ export default defineConfig({
       '_/': `${resolve(__dirname)}/`
     },
   },
-  plugins: [vue(), vono()],
+  plugins: [vue(), vono({ adapter: bun() })],
 })

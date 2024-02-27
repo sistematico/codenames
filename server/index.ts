@@ -1,24 +1,20 @@
 import { Hono } from 'hono'
-import * as schema from '_/server/schema'
-import { db } from '_/server/db'
-import { sql, eq } from 'drizzle-orm'
+import { createNewGameSession, addHint } from '_/server/game'
 
-const hono = new Hono()
+const app = new Hono()
 
-hono.get('/ping', (c) => c.text('pong'))
+app.get('/ping', (c) => c.text('pong'))
 
-hono.get('/hit', async (c) => {
-  const update = await db.update(schema.visits).set({ counter: sql`${schema.visits.counter} + 1` }).where(eq(schema.visits.id, 1)).returning()
-  if (update.length === 0) await db.insert(schema.visits).values({ id: 1, counter: 1 })
-  return c.text('OK')  
+app.get('/game/new/:slug', async (c) => {
+  const slug = c.req.param('slug')
+  createNewGameSession(slug)
+  return c.json({ message: 'Session created: ' + slug })
 })
 
-hono.get('/sessions', async (c) => {
-  const sessions = await db.select().from(schema.sessions)
-  
-  console.log(sessions)
-
-  return c.json({ message: 'OK' })
+app.post('/hint/add', async (c) => {
+  const { sess, hint, len } = await c.req.json()
+  await addHint(sess, hint, len)
+  return c.text(hint)
 })
 
-export default hono
+export default app

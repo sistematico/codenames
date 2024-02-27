@@ -15,6 +15,20 @@
       "when": 1709022668395,
       "tag": "0001_mature_purifiers",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1709039452827,
+      "tag": "0002_curly_kat_farrell",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1709040601716,
+      "tag": "0003_loud_siren",
+      "breakpoints": true
     }
   ]
 }
