@@ -1,0 +1,13 @@
+[Unit]
+Description=CardNames Back-end
+After=network.target
+
+[Service]
+User=nginx
+WorkingDirectory=/var/www/cn.paxa.dev
+ExecStart=/home/nginx/.bun/bin/bun /var/www/cn.paxa.dev/server/index.ts
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
