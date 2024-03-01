@@ -57,8 +57,12 @@ $theme-colors: (
   "dark":          $gray-900,
 );
 
+// $body-bg: #000;
+// $body-color: #111;
+
 @import "bootstrap/scss/bootstrap";
 
-body {
-  background-color: #171a1d;
-}
+
+// body {
+  // background-color: #171a1d;
+// }

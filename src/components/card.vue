@@ -24,6 +24,9 @@ const toggleFlip = () => {
 
   if (store.turn === 'red' && (props.type === 'azul' || props.type === 'branca')) store.turn = 'blue'
   else if (store.turn === 'blue' && (props.type === 'vermelha' || props.type === 'branca')) store.turn = 'red'
+
+  if (store.turn === 'blue') document.body.style.backgroundColor = '#333A73'
+  else if (store.turn === 'red') document.body.style.backgroundColor = '#FF8080'
 }
 </script>
 <template>

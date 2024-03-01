@@ -21,7 +21,8 @@ if (!route.params.id) router.push('/')
 
 const gameSessionId = route.params.id, hint = ref(''), hintLen = ref(0), shint = ref(''), flipped = ref(false), url = `${import.meta.env.VITE_APP_URL}/json/words.json` // Substitua pela URL do seu JSON
 const selectedWords = ref<Word[]>([])
-// let bgColor = 'red'
+
+const theme = 'red'
 
 async function getWords(): Promise<Word[]> {
   let i = 0
@@ -68,7 +69,8 @@ function toggleTeam(team: string) {
 }
 
 onMounted(() => { 
-  console.log(gameSessionId)
+  if (store.turn === 'blue') document.body.style.backgroundColor = '#333A73'
+  else if (store.turn === 'red') document.body.style.backgroundColor = '#F4538A'
   initializeGame()
 })
 </script>
@@ -149,19 +151,13 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style lang="scss">
-@import "/css/sign-in.css";
-
-// :root {
-//   --main-color: #05c;
-//   --accent-color: #056;
-//   // --bs-body-bg: 'red';
-// }
+<style scoped>
+@import url("/css/sign-in.css");
 
 
-// html, body {
-//   background-color: v-bind('bgColor') !important;
-// }
+body {
+  background-color: v-bind(theme);
+}
 </style>
 
 

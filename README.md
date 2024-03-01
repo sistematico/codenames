@@ -19,10 +19,29 @@ server {
     ssl_certificate_key     /etc/letsencrypt/live/dominio.com/privkey.pem;
 
     server_name dominio.com;
-    root /var/www/dominio.com/apps/site/dist;
+    root /var/www/dominio.com/dist/public;
     
     include conf.d/cache.conf;
     include conf.d/errors.conf;
     include conf.d/vite.conf;
 }
 ``` 
+
+## SystemD
+
+```shell
+[Unit]
+Description=CardNames Back-end
+After=network.target
+
+[Service]
+User=nginx
+WorkingDirectory=/var/www/dominio.com
+ExecStart=/home/nginx/.bun/bin/bun /var/www/dominio.com/server/index.ts
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+``` 
+
